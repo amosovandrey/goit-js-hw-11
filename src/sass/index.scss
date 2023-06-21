@@ -64,3 +64,8 @@ input:target {
     -moz-box-shadow: inset 0px 0px 0px 2px $color-accent;
     box-shadow: inset 0px 0px 0px 2px $color-accent;
 }
+
+.gallery {
+    display: flex;
+    margin: 0 auto;
+}
