@@ -67,7 +67,8 @@ input:target {
 }
 
 .load-more {
-    margin: auto;
+    display: block;
+    margin: 0 auto 16px;
     cursor: pointer;
     color: $color-primary;
     padding: 8px;
@@ -81,7 +82,7 @@ input:target {
 
 .gallery {
     display: grid;
-    margin: 0 auto;
+    margin: 0 auto 16px;
     width: 96vw;
     grid-gap: 8px;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
@@ -118,6 +119,6 @@ input:target {
     color: $color-primary;
 }
 
-.is-hidden {
+.hidden {
     display: none;
 }
