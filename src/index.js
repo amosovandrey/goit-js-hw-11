@@ -16,7 +16,7 @@ loadMoreBtn.addEventListener('click', onLoadMore);
 
 let page = 0;
 let currentSearchQuery = '';
-const perPage = 200;
+const perPage = 40;
 
 async function onSearch(e) {
   e.preventDefault();
