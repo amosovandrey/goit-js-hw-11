@@ -20,6 +20,8 @@ const perPage = 40;
 
 async function onSearch(e) {
   e.preventDefault();
+  clearMarkup(galleryEl);
+  hideElement(loadMoreBtn);
   if (inputEl.value !== '') {
     currentSearchQuery = inputEl.value;
     page = 1;
@@ -55,7 +57,7 @@ async function performSearch() {
       }
     } else {
       if (page === 1) {
-        galleryEl.innerHTML = '';
+        clearMarkup(galleryEl);
         Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`);
       }
       renderImages(images);
@@ -97,7 +99,7 @@ function renderImages(images) {
     )
     .join('');
 
-  galleryEl.innerHTML += markup;
+  galleryEl.insertAdjacentHTML('beforeend', markup);
 
   let lightbox = new SimpleLightbox('.gallery a');
   lightbox.refresh();
@@ -134,4 +136,8 @@ function showEndMessage() {
     "We're sorry, but you've reached the end of search results."
   );
   hideElement(loadMoreBtn);
+}
+
+function clearMarkup(element) {
+  element.innerHTML = '';
 }
